@@ -2,16 +2,6 @@
 import './App.css';
 import { useState } from 'react';
 
-
-const Getapi =()=>{
-
-  const [apifetch,setApifetch]= useState("");
-
-
-}
-
-
-
 function App() {
   return (
     <div className="App">
