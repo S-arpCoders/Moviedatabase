@@ -1,0 +1,12 @@
+.movie-list {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Wrap to the next row if necessary */
+    gap: 20px; /* Add space between movie cards */
+    padding: 20px;
+}
+
+.movie-list > * {
+    flex: 0 1 calc(25% - 20px); /* Adjust to fit four cards per row */
+    box-sizing: border-box;
+}
