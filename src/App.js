@@ -1,16 +1,17 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MovieDetails from "./pages/MovieDetails";
+import Homepage from "./pages/homepage";
 
-import './App.css';
-import { useState } from 'react';
-import Navbar from "./components/Navbar/Navbar";
-import HomePage from './components/HomePage';
-
-function App() {
+const App = () => {
   return (
-      <div>
-    <Navbar/>
-      <HomePage />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
+        </Routes>
+      </Router>
   );
-}
+};
 
 export default App;
