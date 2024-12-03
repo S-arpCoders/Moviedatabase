@@ -1,8 +1,8 @@
 import React from 'react';
-import './MovieCard.css';
+import './ShowCard.css';
 import {useNavigate} from "react-router-dom";
 
-const MovieCard = ({ id, title, description,tagline, posterUrl, rating, releaseDate }) => {
+const ShowCard = ({ id, title, description,tagline, posterUrl, rating, releaseDate }) => {
 
     const navigate = useNavigate();
 
@@ -10,8 +10,7 @@ const MovieCard = ({ id, title, description,tagline, posterUrl, rating, releaseD
     console.log(rating);
 
     const handleViewMore = () => {
-
-        navigate(`/movie/${id}`);
+        navigate(`/tv/${id}`);
     };
     return (
         <div className="movie-card">
@@ -31,4 +30,4 @@ const MovieCard = ({ id, title, description,tagline, posterUrl, rating, releaseD
     );
 };
 
-export default MovieCard;
+export default ShowCard;

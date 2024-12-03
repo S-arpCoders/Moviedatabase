@@ -1,0 +1,66 @@
+.movie-card {
+    width: 220px;
+    margin: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #1c1c1e; /* Dark background for contrast */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.poster-image {
+    position: relative;
+    width: 100%;
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #333;
+}
+
+.rating-circle {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ff7f; /* Bright green for ratings */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.movie-details {
+    padding: 10px;
+    text-align: center;
+}
+
+.movie-details h3 {
+    font-size: 1rem;
+    margin: 0;
+    text-transform: capitalize;
+    color: #ffffff;
+}
+
+.movie-details p {
+    font-size: 0.9rem;
+    margin: 5px 0 0;
+    color: #bbb; /* Lighter shade for release date */
+}
+
+.movie-poster:hover {
+    filter: brightness(0.8); /* Dim the poster slightly on hover */
+}

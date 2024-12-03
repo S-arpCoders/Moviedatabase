@@ -9,6 +9,7 @@ import movie from "../images/movie.jpg";
 import travel from "../images/travel.jpg";
 import cartoon from "../images/cartoon.jpg";
 import studio from "../images/studio.jpg";
+import ShowCard from "../components/ShowCard/ShowCard";
 
 const Homepage = () => {
     const [movies, setMovies] = useState([]);
@@ -44,11 +45,10 @@ const Homepage = () => {
         loadShows();
     }, []);
 
-    // Fetch search results whenever the query changes
     useEffect(() => {
         const fetchSearchResults = async () => {
             if (!query) {
-                setSearchResults([]); // Clear search results if query is empty
+                setSearchResults([]);
                 return;
             }
             try {
@@ -66,12 +66,11 @@ const Homepage = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 4000); // 4 seconds per image
+        }, 4000);
 
         return () => clearInterval(interval); // Cleanup on component unmount
     }, [images.length]);
 
-    // Handle input change
     const handleInputChange = (e) => {
         setQuery(e.target.value);
     };
@@ -82,7 +81,7 @@ const Homepage = () => {
         <div className="App">
             <Navbar />
             <center>
-                {/* Search Section */}
+                {}
                 <div
                     className="search-container"
                     style={{
@@ -203,13 +202,13 @@ const Homepage = () => {
                                         : 'https://via.placeholder.com/500x750?text=No+Image';
 
                                     return (
-                                        <MovieCard
+                                        <ShowCard
                                             key={index}
                                             id={show.id}
                                             title={show.name} // `name` for TV shows
                                             description={show.overview}
                                             posterUrl={posterUrl}
-                                            releaseDate={movie.release_date}
+                                            releaseDate={show.first_air_date}
                                             rating={show.vote_average}
                                         />
                                     );
