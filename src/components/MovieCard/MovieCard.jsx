@@ -7,6 +7,7 @@ const MovieCard = ({ id, title, description,tagline, posterUrl, rating, releaseD
     const navigate = useNavigate();
 
     let percentage = Math.ceil((rating / 10) * 100);
+    console.log(rating);
 
     const handleViewMore = () => {
 
