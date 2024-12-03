@@ -17,6 +17,7 @@ const Homepage = () => {
             try {
                 const movieData = await fetchPopularMovies();
                 setMovies(movieData.results);
+                console.log(movieData);
             } catch (err) {
                 setError(err.message);
             }
@@ -128,9 +129,11 @@ const Homepage = () => {
                                         <MovieCard
                                             key={index}
                                             id={movie.id}
-                                            title={movie.title || movie.name} // `name` for TV shows
+                                            title={movie.title || movie.name}
                                             description={movie.overview}
                                             posterUrl={posterUrl}
+                                            rating={movie.vote_average}
+                                            releaseDate={movie.runtime}
                                         />
                                     );
                                 })}
@@ -154,6 +157,8 @@ const Homepage = () => {
                                                     title={movie.title}
                                                     description={movie.overview}
                                                     posterUrl={posterUrl}
+                                                    rating={movie.vote_average}
+                                                    releaseDate={movie.runtime}
                                                 />
                                             );
                                         })}
@@ -175,6 +180,8 @@ const Homepage = () => {
                                                     title={show.name} // `name` for TV shows
                                                     description={show.overview}
                                                     posterUrl={posterUrl}
+                                                    rating={show.vote_average}
+                                                    releaseDate={show.runtime}
                                                 />
                                             );
                                         })}
