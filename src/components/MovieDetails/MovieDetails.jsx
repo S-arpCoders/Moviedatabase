@@ -30,6 +30,7 @@ const MovieDetails = () => {
                 <div className="movie-details-overview">
                     <h2>Overview</h2>
                     <p className="movie-details-description">{movie.overview}</p>
+                    <h3>Tagline</h3>
                     <p className="movie-details-tagline"> {movie.tagline}</p>
                 </div>
             </div>
