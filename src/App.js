@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MovieDetails from "./pages/MovieDetails";
+import MovieDetails from "./components/MovieDetails/MovieDetails";
 import Homepage from "./pages/homepage";
 
 const App = () => {
