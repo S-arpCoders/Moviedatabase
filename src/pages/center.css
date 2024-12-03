@@ -1,0 +1,58 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    padding: 20px;
+    background-color: #5e3f3f;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.column {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.search-container {
+    height: 40vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.search-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   /* background: url('/images/chucky.jpg') no-repeat center center/cover;
+    animation: slideShow 12s infinite;
+    z-index: -1; /* Keep the background behind the form */
+}
+
+
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
