@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import MovieCard from "./MovieCard/MovieCard";
 
 
 const options = {
@@ -28,41 +28,28 @@ const HomePage = () => {
     return <div>Loading...</div>;
   }
 
-  return (
-    <div className="App">
-      <center>
-        {apifetch.map((dataObj, index) => {
-             const posterUrl = dataObj.poster_path
-             ? `https://image.tmdb.org/t/p/w500${dataObj.poster_path}`
-             : 'https://via.placeholder.com/500x750?text=No+Image'; // Placeholder image if no poster
- 
-          return (
-            <div
-              style={{
-                width: "15em",
-                backgroundColor: "#CD8FFD",
-                padding: 2,
-                borderRadius: 10,
-                marginBlock: 10,
-              }}
-            >
-                 <img
-                src={posterUrl}
-                alt={dataObj.title}
-                style={{
-                  width: '100%',
-                  borderRadius: 10,
-                }}
-              />
-              <p style={{ fontSize: 20, color: 'white' }}>{dataObj.title}</p>
-              <p style={{ fontSize: 20, color: 'white' }}>{dataObj.poster_path}</p>
-              <p style={{ fontSize: 20, color: 'white' }}>{dataObj.popularity}</p>
-            </div>
-          );
-        })}
-      </center>
-    </div>
-  );
+    return (
+        <div className="App">
+            <center>
+                <div className="movie-list">
+                    {apifetch.map((dataObj, index) => {
+                        const posterUrl = dataObj.poster_path
+                            ? `https://image.tmdb.org/t/p/w500${dataObj.poster_path}`
+                            : 'https://via.placeholder.com/500x750?text=No+Image'; // Placeholder image if no poster
+
+                        return (
+                            <MovieCard
+                                key={index}
+                                title={dataObj.title}
+                                description={dataObj.overview}
+                                posterUrl={posterUrl}
+                            />
+                        );
+                    })}
+                </div>
+            </center>
+        </div>
+    );
 }
 
 export default HomePage
