@@ -1,3 +1,5 @@
+/* MovieCard.css */
+
 .movie-card {
     width: 300px;
     border: 1px solid #ddd;
@@ -6,22 +8,40 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 10px;
     background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .movie-poster {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-card:hover .movie-poster {
+    transform: scale(1.05);
 }
 
 .movie-details {
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px; /* Ensure it has enough space */
 }
 
 .movie-title {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin: 0;
     color: #333;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 5px;
 }
 
 .movie-description {
@@ -41,9 +61,31 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: center;
 }
 
 .movie-button:hover {
     background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .movie-card {
+        width: 100%;
+    }
+
+    .movie-details {
+        padding: 10px;
+    }
+
+    .movie-title {
+        font-size: 1.2em;
+    }
+
+    .movie-button {
+        width: 100%;
+        font-size: 1.2em;
+    }
 }
