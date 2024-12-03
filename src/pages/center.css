@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
 
     padding: 20px;
-    background-color: #5e3f3f;
+    background-color: #100000;
 }
 
 .container {
@@ -25,7 +25,7 @@ body {
     border-radius: 5px;
 }
 .search-container {
-    height: 40vh;
+    height: 100vh;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -54,21 +54,27 @@ h2 {
 @keyframes slideShow {
     5% {
         background: url('../images/chucky.jpg') no-repeat center center/cover;
+
     }
     20% {
         background: url('../images/deadpo.jpg') no-repeat center center/cover;
+
     }
 
 40% {
     background: url('../images/cartoon.jpg') no-repeat center center/cover;
+
 }
 60% {
     background: url('../images/movie.jpg') no-repeat center center/cover;
+
 }
 80%{
     background: url('../images/studio.jpg') no-repeat center center/cover;
+
 }
     95% {
-        background: url('../images/spider.jpg') no-repeat center center/cover;
+        background: url('../images/travel.jpg') no-repeat center center/cover;
+
     }
 }

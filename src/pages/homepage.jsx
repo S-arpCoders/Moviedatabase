@@ -6,7 +6,7 @@ import './center.css';
 import chucky from "../images/chucky.jpg";
 import deadpo from "../images/deadpo.jpg";
 import movie from "../images/movie.jpg";
-import spider from "../images/spider.jpg";
+import travel from "../images/travel.jpg";
 import cartoon from "../images/cartoon.jpg";
 import studio from "../images/studio.jpg";
 
@@ -18,7 +18,7 @@ const Homepage = () => {
     const [error, setError] = useState(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    const images = [chucky, deadpo, movie, spider,cartoon,studio];
+    const images = [chucky, deadpo, movie, travel,cartoon,studio];
 
     // Fetch popular movies and shows on component mount
     useEffect(() => {
@@ -122,20 +122,20 @@ const Homepage = () => {
                                 type="submit"
                                 style={{
                                     position: 'absolute',
-                                    right: '-32px', // Slight padding from the edge
+                                    right: '-0px', // Slight padding from the edge
                                     top: '50%',
                                     transform: 'translateY(-50%)', // Center vertically
                                     padding: '15px 20px',
                                     borderRadius: '20px',
                                     border: 'none',
-                                    backgroundColor: '#007BFF',
+                                    backgroundColor: ' #b90909',
                                     color: '#fff',
                                     fontSize: '16px',
                                     cursor: 'pointer',
                                     transition: 'all 0.3s ease',
                                 }}
-                                onMouseOver={(e) => (e.target.style.backgroundColor = '#0056b3')}
-                                onMouseOut={(e) => (e.target.style.backgroundColor = '#007BFF')}
+                                onMouseOver={(e) => (e.target.style.backgroundColor = '#322C2B')}
+                                onMouseOut={(e) => (e.target.style.backgroundColor = '#b90909')}
                             >
                                 Search
                             </button>
@@ -159,6 +159,8 @@ const Homepage = () => {
                                         id={movie.id}
                                         title={movie.title || movie.name} // `name` for TV shows
                                         description={movie.overview}
+                                        rating={movie.vote_average}
+                                        releaseDate={movie.release_date}
                                         posterUrl={posterUrl}
                                     />
                                 );
@@ -183,6 +185,8 @@ const Homepage = () => {
                                             title={movie.title}
                                             description={movie.overview}
                                             posterUrl={posterUrl}
+                                            releaseDate={movie.release_date}
+                                            rating={movie.vote_average}
                                         />
                                     );
                                 })}
@@ -205,6 +209,8 @@ const Homepage = () => {
                                             title={show.name} // `name` for TV shows
                                             description={show.overview}
                                             posterUrl={posterUrl}
+                                            releaseDate={movie.release_date}
+                                            rating={show.vote_average}
                                         />
                                     );
                                 })}
