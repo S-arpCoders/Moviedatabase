@@ -45,3 +45,9 @@ export const SearchMovie = async (query) => {
 
     return await fetchData(url);
 }
+
+//Movie Details
+export const SearchMovieDetails = async (id) => {
+    const url = `https://api.themoviedb.org/3/movie/${id}`;
+    return await fetchData(url);
+    }
