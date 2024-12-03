@@ -63,15 +63,52 @@ const Homepage = () => {
         <div className="App">
             <Navbar />
             <center>
-                <form onSubmit={handleInputChange} style={{ marginBottom: '20px' }}>
-                    <input
-                        type="text"
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        placeholder="Search for a movie..."
-                        style={{ padding: '20px', width: '300px' }}
-                    />
-                    <button type="submit" style={{ padding: '10px' }}>Search</button>
+                <form onSubmit={handleInputChange} style={{marginBottom: '20px'}}>
+                    <div style={{
+                        position: 'relative',
+                        display: 'inline-block',
+                        width: '820px', // Adjust to match the input's width + button
+                        marginTop: '20px',
+                    }}>
+                        <input
+                            type="text"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            placeholder="Search for a movie..."
+                            style={{
+                                padding: '15px',
+                                width: '100%',
+                                borderRadius: '20px',
+                                border: '1px solid #ccc',
+                                outline: 'none',
+                                boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+                                fontSize: '16px',
+                            }}
+                        />
+                        <button
+                            type="submit"
+                            style={{
+                                position: 'absolute',
+                                right: '-32px', // Slight padding from the edge
+                                top: '50%',
+                                transform: 'translateY(-50%)', // Center vertically
+                                padding: '15px 20px',
+                                borderRadius: '20px',
+                                border: 'none',
+                                backgroundColor: '#007BFF',
+                                color: '#fff',
+                                fontSize: '16px',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease',
+                            }}
+                            onMouseOver={(e) => (e.target.style.backgroundColor = '#0056b3')}
+                            onMouseOut={(e) => (e.target.style.backgroundColor = '#007BFF')}
+                        >
+                            Search
+                        </button>
+                    </div>
+
+
                 </form>
 
                 {searchResults.length > 0 ? (
