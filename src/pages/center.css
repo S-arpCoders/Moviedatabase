@@ -1,0 +1,138 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    padding: 20px;
+    background-color: #1e1c1c;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.column {
+    background-color: #d3d3d3;
+    padding: 20px;
+    border: 1px ;
+    display: grid;
+
+    border-radius: 5px;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.movie-list > * {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .movie-list > * {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+
+.search-movie-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.search-movie-list > * {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .search-movie-list > * {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.search-container {
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    animation: slideShow 12s infinite;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .search-container {
+        animation: slideShow 12s infinite; /* Change background every 12 seconds */
+    }
+}
+
+
+@keyframes slideShow {
+    0% {
+        background: url('../images/chucky.jpg') no-repeat center center/cover;
+
+    }
+    5% {
+        background: url('../images/deadpo.jpg') no-repeat center center/cover;
+
+    }
+
+   20% {
+    background: url('../images/cartoon.jpg') no-repeat center center/cover;
+
+}
+   40% {
+    background: url('../images/movie.jpg') no-repeat center center/cover;
+
+}
+   60%{
+    background: url('../images/studio.jpg') no-repeat center center/cover;
+
+}
+    80% {
+        background: url('../images/travel.jpg') no-repeat center center/cover;
+
+    }
+    90% {
+        background: url('../images/first.jpg') no-repeat center center/cover;
+    }
+    100%{
+        background: url('../images/spongeB.jpg') no-repeat center center/cover;
+    }
+}

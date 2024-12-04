@@ -1,0 +1,80 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 2px;
+    background-color: #b90909;
+    color: white;
+    position: fixed; /* Makes the navbar stick to the top */
+    top: -2px; /* Aligns it to the top edge */
+    width: 100%; /* Ensures the navbar spans the full width of the page */
+    z-index: 1000; /* Ensures it stays above other elements */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: Adds a slight shadow for better visibility */
+    border-radius: 100px;
+    height: 50px;
+}
+
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex: 1; /* Pushes other content away to make space for centering */
+}
+
+.navbar-logo {
+    width: 250px;  /* Increase the width of the logo */
+    height: auto; /* Maintain the aspect ratio */
+    margin-right: 5px; /* Keep spacing consistent */
+}
+
+
+.navbar-links {
+    flex: 1; /* Center the links by taking equal space on both sides */
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-links a {
+    margin: 0 15px; /* Space between links */
+    color: #050505;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold ;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+    flex: 100; /* Pushes links to the center */
+    justify-content: flex-end; /* Aligns the search bar to the right */
+}
+
+.navbar-search input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.navbar-search button {
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar-search button:hover {
+    background-color: #c0392b;
+}
+
+body {
+    padding-top: 60px; /* Prevents the content from being hidden under the fixed navbar */
+}
