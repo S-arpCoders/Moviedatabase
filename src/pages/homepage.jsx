@@ -146,7 +146,7 @@ const Homepage = () => {
                 {searchResults.length > 0 ? (
                     <>
                         <h1 id="search-results">Search Results</h1>
-                        <div className="movie-list">
+                        <div className="search-movie-list">
                             {searchResults.map((movie, index) => {
                                 const posterUrl = movie.poster_path
                                     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
