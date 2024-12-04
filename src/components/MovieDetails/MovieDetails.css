@@ -7,6 +7,134 @@
     min-height: 50vh;
 }
 
+/* trailer*/
+
+.movie-details-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color:white;
+}
+
+.left-section {
+    flex: 0 0 30%;
+}
+
+.right-section {
+    flex: 0 0 40%;
+}
+
+.trailer-section {
+    flex: 0 0 30%;
+    margin-left: 20px;
+}
+
+.movie-cast {
+    margin-top: 30px;
+}
+
+.cast-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+/*Clements Update*/
+
+.movie-details-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1px;
+}
+
+.left-section {
+    flex: 0 0 30%;
+    position: relative;
+}
+
+.right-section {
+    flex: 0 0 40%;
+    position: relative;
+}
+
+.trailer-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.movie-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;  /* Reduced the margin to bring the buttons up closer */
+}
+
+.download-action {
+    margin-top: 10px; /* Reduced space between the left section and the download button */
+}
+
+.watch-action {
+    margin-top: 10px; /* Reduced space between the right section and the watch button */
+}
+
+.action-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px; /* Ensure buttons do not stretch too much */
+}
+
+.download-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+.watch-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.watch-button:hover {
+    background-color: #218838;
+}
+
+.movie-cast {
+    margin-top: 30px;
+}
+
+.cast-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+/*end my section*/
+.trailer-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.movie-cast {
+    margin-top: 30px;
+}
+
+.cast-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+
+
+
+
 .left-section {
     flex: 1;
     display: flex;
