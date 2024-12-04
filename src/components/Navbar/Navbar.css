@@ -38,9 +38,10 @@
 
 .navbar-links a {
     margin: 0 15px; /* Space between links */
-    color: white;
+    color: #050505;
     text-decoration: none;
     font-size: 1em;
+    font-weight: bold ;
 }
 
 .navbar-links a:hover {

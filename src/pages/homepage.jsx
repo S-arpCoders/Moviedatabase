@@ -11,6 +11,10 @@ import cartoon from "../images/cartoon.jpg";
 import studio from "../images/studio.jpg";
 import ShowCard from "../components/ShowCard/ShowCard";
 import first from "../images/first.jpg";
+import spongeB from "../images/spongeB.jpg";
+
+
+
 const Homepage = () => {
     const [movies, setMovies] = useState([]);
     const [shows, setShows] = useState([]);
@@ -19,7 +23,7 @@ const Homepage = () => {
     const [error, setError] = useState(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    const images = [chucky, deadpo, movie, travel,cartoon,studio,first];
+    const images = [chucky, deadpo, movie, travel,cartoon,studio,first,spongeB];
 
     // Fetch popular movies and shows on component mount
     useEffect(() => {

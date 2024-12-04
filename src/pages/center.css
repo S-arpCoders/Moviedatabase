@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
 
     padding: 20px;
-    background-color: #100000;
+    background-color: #1e1c1c;
 }
 
 .container {
@@ -19,7 +19,7 @@ body {
 }
 
 .column {
-    background-color: #dcd4d4;
+    background-color: #d3d3d3;
     padding: 20px;
     border: 1px ;
     display: grid;
@@ -104,32 +104,35 @@ h2 {
 
 
 @keyframes slideShow {
-    5% {
+    0% {
         background: url('../images/chucky.jpg') no-repeat center center/cover;
 
     }
-    20% {
+    5% {
         background: url('../images/deadpo.jpg') no-repeat center center/cover;
 
     }
 
-40% {
+   20% {
     background: url('../images/cartoon.jpg') no-repeat center center/cover;
 
 }
-60% {
+   40% {
     background: url('../images/movie.jpg') no-repeat center center/cover;
 
 }
-80%{
+   60%{
     background: url('../images/studio.jpg') no-repeat center center/cover;
 
 }
-    95% {
+    80% {
         background: url('../images/travel.jpg') no-repeat center center/cover;
 
     }
-    100% {
+    90% {
         background: url('../images/first.jpg') no-repeat center center/cover;
+    }
+    100%{
+        background: url('../images/spongeB.jpg') no-repeat center center/cover;
     }
 }
