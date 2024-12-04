@@ -65,9 +65,14 @@ export const SearchShowDetails = async (id) => {
 
 //Credits
 export const SearchMovieCredits = async (id) => {
-    const url = `https://api.themoviedb.org/3/movie/${id}/credits?l`;
+    const url = `https://api.themoviedb.org/3/movie/${id}/credits?`;
 
     const data = await fetchData(url);
     console.log(data);
     return data;
 };
+
+export const movieTrailer = async (id) => {
+    const url = `https://api.themoviedb.org/3/movie/${id}/videos?`;
+    return await fetchData(url);
+}
