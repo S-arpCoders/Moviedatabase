@@ -4,7 +4,7 @@
     align-items: center;    /* Center content vertically */
     padding: 20px;          /* Reduce padding for a tighter layout */
     background-color: #1b0909;
-    min-height: 100vh;
+    min-height: 50vh;
 }
 
 .left-section {
@@ -99,3 +99,30 @@
         font-size: 0.9rem;
     }
 }
+
+.movie-cast {
+    margin-top: -100px;
+}
+
+.cast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.cast-member {
+    text-align: center;
+}
+
+.cast-photo {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.cast-name {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
