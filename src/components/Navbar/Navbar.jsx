@@ -6,9 +6,11 @@ import logo from '../../images/Logo.png';
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <div className="navbar-brand">
-                <img src={logo} alt="Logo" className="navbar-logo"/>
-
+            <div>
+                <img src={logo}
+                     alt="Logo"
+                     className="navbar-logo"
+                 />
             </div>
 
             <div className="navbar-links">

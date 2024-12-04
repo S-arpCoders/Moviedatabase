@@ -2,15 +2,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 1px 2px;
     background-color: #b90909;
     color: white;
     position: fixed; /* Makes the navbar stick to the top */
-    top: 0; /* Aligns it to the top edge */
+    top: -2px; /* Aligns it to the top edge */
     width: 100%; /* Ensures the navbar spans the full width of the page */
     z-index: 1000; /* Ensures it stays above other elements */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: Adds a slight shadow for better visibility */
+    border-radius: 100px;
+    height: 50px;
 }
+
 
 .navbar-brand {
     font-size: 1.5em;
@@ -21,10 +24,11 @@
 }
 
 .navbar-logo {
-    width: 30px;  /* Set the width of the logo */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 5px; /* Space between logo and text */
+    width: 250px;  /* Increase the width of the logo */
+    height: auto; /* Maintain the aspect ratio */
+    margin-right: 5px; /* Keep spacing consistent */
 }
+
 
 .navbar-links {
     flex: 1; /* Center the links by taking equal space on both sides */

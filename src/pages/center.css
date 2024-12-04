@@ -19,9 +19,9 @@ body {
 }
 
 .column {
-    background-color: #fff;
+    background-color: #dcd4d4;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px ;
     display: grid;
 
     border-radius: 5px;
@@ -81,6 +81,9 @@ body {
     overflow: hidden;
     position: relative;
     animation: slideShow 12s infinite;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
@@ -125,5 +128,8 @@ h2 {
     95% {
         background: url('../images/travel.jpg') no-repeat center center/cover;
 
+    }
+    100% {
+        background: url('../images/first.jpg') no-repeat center center/cover;
     }
 }
