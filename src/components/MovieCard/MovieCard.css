@@ -9,6 +9,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
+    max-height: 70vh;
 }
 
 .movie-card:hover {
@@ -22,7 +23,7 @@
 
 .movie-poster {
     width: 100%;
-    height: auto;
+    height: 60vh;
     border-bottom: 2px solid #333;
 }
 
