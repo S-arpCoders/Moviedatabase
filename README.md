@@ -46,17 +46,25 @@ REACT_APP_API_KEY=<your-tmdb-api-key>
 Start the development server:
 npm start
 
-Open http://localhost:3001 in your browser.
+Open http://localhost:3000 in your browser.
 
-**API Endpoints Used 🌐**
+## Deployment on Render 🌐
 
-- **Popular Movies**: /discover/movie
-- **Popular TV Shows**: /discover/tv
-- **Search Movies**: /search/movie
-- **Upcoming Movies**: /movie/upcoming
-- **Movie Trailers**: /movie/{movie_id}/videos
-  
-All endpoints are from the TMDB API. Requests are authenticated using the Bearer token provided in the .env file.
+To deploy the project live using Render, follow these steps:
+
+Push your code to GitHub if not already done:
+  git push origin main
+
+- Log in to Render and click New > Static Site.
+- Connect your GitHub repository by authorizing Render.
+- Select the Moviedatabase repository from the list.
+- Specify the following build and deployment settings:
+- **Build Command**: npm install && npm run build
+- **Publish Directory:** build
+- Add the environment variable REACT_APP_API_KEY with your TMDB API key.
+- Click Deploy and wait for the deployment process to complete.
+Your project will be live at the generated Render URL. You can customize this URL in Render's settings.
+The project is already deployed and accessible at [Movie Database](https://moviedatabase-2xv0.onrender.com/).
 
 ## Future Improvements 🔧
 - Implement a loading spinner for a better user experience during data fetches.
