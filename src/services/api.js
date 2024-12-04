@@ -14,7 +14,6 @@ const fetchData = async (url) => {
         }
         return await response.json();
     } catch (error) {
-        console.error(error);
         throw error;
     }
 };
@@ -41,7 +40,39 @@ export const fetchPopularShows = async (page = 1) => {
 
 //search
 export const SearchMovie = async (query) => {
-    const url =`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`;
+    const url = `https://api.themoviedb.org/3/search/multi?query=${encodeURIComponent(query)}&page=1&include_adult=false`;
 
+    const data = await fetchData(url);
+
+    if (data && data.results) {
+        data.results.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
+    }
+
+    return data;
+};
+
+
+//Movie Details
+export const SearchMovieDetails = async (id) => {
+    const url = `https://api.themoviedb.org/3/movie/${id}`;
+    return await fetchData(url);
+    }
+//Movie Details
+export const SearchShowDetails = async (id) => {
+    const url = `https://api.themoviedb.org/3/tv/${id}`;
+    return await fetchData(url);
+    }
+
+//Credits
+export const SearchMovieCredits = async (id) => {
+    const url = `https://api.themoviedb.org/3/movie/${id}/credits?`;
+
+    const data = await fetchData(url);
+    console.log(data);
+    return data;
+};
+
+export const movieTrailer = async (id) => {
+    const url = `https://api.themoviedb.org/3/movie/${id}/videos?`;
     return await fetchData(url);
 }

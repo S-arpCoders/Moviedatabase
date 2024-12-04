@@ -1,0 +1,101 @@
+.movie-details-page {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;    /* Center content vertically */
+    padding: 20px;          /* Reduce padding for a tighter layout */
+    background-color: #1b0909;
+    min-height: 100vh;
+}
+
+.left-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #090909;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 300px;  /* Reduce width for tighter spacing */
+    margin-right: 20px; /* Smaller gap between sections */
+}
+
+.movie-details-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(2, 2, 2);
+}
+
+.right-section {
+    flex: 1.5; /* Slightly larger for text content */
+    padding-left: 20px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+}
+
+.movie-details-title {
+    font-size: 2.5rem; /* Slightly smaller for compact layout */
+    font-weight: bold;
+    color: #efebeb;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.movie-details-overview {
+    background-color: #0c0c0c;
+    padding: 15px; /* Smaller padding for a tighter look */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+.movie-details-description,
+.movie-details-tagline {
+    font-size: 1rem; /* Standardized font size for readability */
+    color: #ffffff;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.movie-details-overview h2 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.movie-details-overview h3 {
+    font-size: 1.0rem;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: Lowercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .movie-details-page {
+        flex-direction: column; /* Stack sections vertically on small screens */
+        padding: 10px;
+    }
+
+    .left-section, .right-section {
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .movie-details-title {
+        font-size: 2rem;
+    }
+
+    .movie-details-description,
+    .movie-details-tagline {
+        font-size: 0.9rem;
+    }
+}
