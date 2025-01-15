@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchPopularShows, fetchPopularMovies, SearchMovie } from '../services/api';
+import { fetchPopularShows, fetchPopularMovies, SearchMovie,SearchShows } from '../services/api';
 import MovieCard from "../components/MovieCard/MovieCard";
 import Navbar from "../components/Navbar/Navbar";
 import './center.css';
@@ -18,7 +18,8 @@ import spongeB from "../images/spongeB.jpg";
 const Homepage = () => {
     const [movies, setMovies] = useState([]);
     const [shows, setShows] = useState([]);
-    const [searchResults, setSearchResults] = useState([]);
+    const [searchShows, setSearchShows] = useState([]);
+    const [searchMovie, setSearchMovie] = useState([]);
     const [query, setQuery] = useState("");
     const [error, setError] = useState(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -52,12 +53,14 @@ const Homepage = () => {
     useEffect(() => {
         const fetchSearchResults = async () => {
             if (!query) {
-                setSearchResults([]);
+                setSearchShows([]);
                 return;
             }
             try {
-                const searchData = await SearchMovie(query);
-                setSearchResults(searchData.results);
+                const searchMovies = await SearchMovie(query);
+                const searchShows = await SearchShows(query);
+                setSearchShows(searchShows.results);
+                setSearchMovie(searchMovies.results);
             } catch (err) {
                 setError(err.message);
             }
@@ -147,28 +150,78 @@ const Homepage = () => {
                 </div>
 
                 {/* Results Section */}
-                {searchResults.length > 0 ? (
+                {query.length > 0 ? (
                     <>
                         <h1 id="search-results">Search Results</h1>
-                        <div className="search-movie-list">
-                            {searchResults.map((movie, index) => {
-                                const posterUrl = movie.poster_path
-                                    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                                    : 'https://via.placeholder.com/500x750?text=No+Image'; // Placeholder image if no poster
 
-                                return (
-                                    <MovieCard
-                                        key={index}
-                                        id={movie.id}
-                                        title={movie.title || movie.name} // `name` for TV shows
-                                        description={movie.overview}
-                                        rating={movie.vote_average}
-                                        releaseDate={movie.release_date}
-                                        posterUrl={posterUrl}
-                                    />
-                                );
-                            })}
+                        <div className="container">
+                            {/* Movies Section */}
+                            <div className="column">
+                                <h1 id="movies"> Movies</h1>
+                                <div className="movie-list">
+                                    {searchMovie.map((movie, index) => {
+                                        const posterUrl = movie.poster_path
+                                            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                                            : 'https://via.placeholder.com/500x750?text=No+Image';
+
+                                        return (
+                                            <MovieCard
+                                                key={index}
+                                                id={movie.id}
+                                                title={movie.title}
+                                                description={movie.overview}
+                                                posterUrl={posterUrl}
+                                                releaseDate={movie.release_date}
+                                                rating={movie.vote_average}
+                                            />
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
+                            {/* Shows Section */}
+                            <div className="column">
+                                <h1 id="shows"> TV Shows</h1>
+                                <div className="movie-list">
+                                    {searchShows.map((show, index) => {
+                                        const posterUrl = show.poster_path
+                                            ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
+                                            : 'https://via.placeholder.com/500x750?text=No+Image';
+
+                                        return (
+                                            <ShowCard
+                                                key={index}
+                                                id={show.id}
+                                                title={show.name} // `name` for TV shows
+                                                description={show.overview}
+                                                posterUrl={posterUrl}
+                                                releaseDate={show.first_air_date}
+                                                rating={show.vote_average}
+                                            />
+                                        );
+                                    })}
+                                </div>
+                            </div>
                         </div>
+                        {/*<div className="search-movie-list">*/}
+                        {/*    {searchResults.map((movie, index) => {*/}
+                        {/*        const posterUrl = movie.poster_path*/}
+                        {/*            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`*/}
+                        {/*            : 'https://via.placeholder.com/500x750?text=No+Image'; // Placeholder image if no poster*/}
+
+                        {/*        return (*/}
+                        {/*            <MovieCard*/}
+                        {/*                key={index}*/}
+                        {/*                id={movie.id}*/}
+                        {/*                title={movie.title || movie.name} // `name` for TV shows*/}
+                        {/*                description={movie.overview}*/}
+                        {/*                rating={movie.vote_average}*/}
+                        {/*                releaseDate={movie.release_date}*/}
+                        {/*                posterUrl={posterUrl}*/}
+                        {/*            />*/}
+                        {/*        );*/}
+                        {/*    })}*/}
+                        {/*</div>*/}
                     </>
                 ) : (
                     <div className="container">

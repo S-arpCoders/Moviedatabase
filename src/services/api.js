@@ -40,7 +40,18 @@ export const fetchPopularShows = async (page = 1) => {
 
 //search
 export const SearchMovie = async (query) => {
-    const url = `https://api.themoviedb.org/3/search/multi?query=${encodeURIComponent(query)}&page=1&include_adult=false`;
+    const url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&page=1&include_adult=false`;
+
+    const data = await fetchData(url);
+
+    if (data && data.results) {
+        data.results.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
+    }
+
+    return data;
+};
+export const SearchShows = async (query) => {
+    const url = `https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(query)}&page=1&include_adult=false`;
 
     const data = await fetchData(url);
 

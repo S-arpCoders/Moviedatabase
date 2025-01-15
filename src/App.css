@@ -9,4 +9,5 @@
 .movie-list > * {
     flex: 0 1 calc(25% - 20px); /* Adjust to fit four cards per row */
     box-sizing: border-box;
+
 }
