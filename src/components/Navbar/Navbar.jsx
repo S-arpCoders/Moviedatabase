@@ -16,7 +16,7 @@ const Navbar = () => {
             <div className="navbar-links">
                 <a href="#movies">Movies</a>
                 <a href="#shows">Shows</a>
-                <a href="#more">More</a>
+
             </div>
 
         </nav>
