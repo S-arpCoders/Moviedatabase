@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./ShowDetails.css";
-import {SearchShowDetails} from "../../services/api";
+import { SearchShowDetails } from "../../services/api";
 
 const ShowDetails = () => {
-    const { id } = useParams();  // Get movie id from the URL
+    const { id } = useParams();
+    const navigate = useNavigate();
     const [show, setShow] = useState(null);
 
     useEffect(() => {
@@ -22,6 +23,12 @@ const ShowDetails = () => {
 
     return (
         <div className="movie-details-page">
+            <button
+                onClick={() => navigate('/')}
+                style={{ position: 'absolute', top: '20px', left: '20px', padding: '10px 20px', fontSize: '18px', borderRadius: '8px', cursor: 'pointer' }}
+            >
+                Back to Home
+            </button>
             <div className="left-section">
                 <img className="movie-details-poster" src={`https://image.tmdb.org/t/p/w500${show.poster_path}`} alt={`${show.name} Poster`} />
             </div>
